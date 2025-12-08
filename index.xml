@@ -6,8 +6,15 @@
     <description>Recent content on Yuiii blog</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Dec 2025 21:47:28 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Dec 2025 22:08:48 +0800</lastBuildDate>
     <atom:link href="https://yuqiiop.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test2</title>
+      <link>https://yuqiiop.github.io/posts/test2/</link>
+      <pubDate>Mon, 08 Dec 2025 22:08:48 +0800</pubDate>
+      <guid>https://yuqiiop.github.io/posts/test2/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Hello</title>
       <link>https://yuqiiop.github.io/posts/hello/</link>
