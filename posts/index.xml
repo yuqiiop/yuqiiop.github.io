@@ -15,5 +15,12 @@
       <guid>https://yuqiiop.github.io/posts/hello/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Test</title>
+      <link>https://yuqiiop.github.io/posts/test/</link>
+      <pubDate>Mon, 08 Dec 2025 21:47:28 +0800</pubDate>
+      <guid>https://yuqiiop.github.io/posts/test/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
