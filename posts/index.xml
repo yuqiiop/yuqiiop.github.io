@@ -23,11 +23,11 @@
       <description></description>
     </item>
     <item>
-      <title>文章标题</title>
+      <title>Hello Hugo</title>
       <link>https://yuqiiop.github.io/posts/hello/</link>
       <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://yuqiiop.github.io/posts/hello/</guid>
-      <description>一段简短摘要，用于首页和搜索</description>
+      <description>我的第一篇 Hugo 博客，用于测试 PaperMod、搜索与标签功能</description>
     </item>
   </channel>
 </rss>
