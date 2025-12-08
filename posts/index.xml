@@ -16,18 +16,18 @@
       <description></description>
     </item>
     <item>
-      <title>Hello</title>
-      <link>https://yuqiiop.github.io/posts/hello/</link>
-      <pubDate>Mon, 08 Dec 2025 21:47:28 +0800</pubDate>
-      <guid>https://yuqiiop.github.io/posts/hello/</guid>
-      <description>&lt;p&gt;这是测试文档&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Test</title>
       <link>https://yuqiiop.github.io/posts/test/</link>
       <pubDate>Mon, 08 Dec 2025 21:47:28 +0800</pubDate>
       <guid>https://yuqiiop.github.io/posts/test/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>文章标题</title>
+      <link>https://yuqiiop.github.io/posts/hello/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://yuqiiop.github.io/posts/hello/</guid>
+      <description>一段简短摘要，用于首页和搜索</description>
     </item>
   </channel>
 </rss>
