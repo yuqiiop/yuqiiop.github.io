@@ -17,9 +17,9 @@
     </item>
     <item>
       <title>unity逆向  Il2cpp </title>
-      <link>https://yuqiiop.github.io/posts/test/</link>
+      <link>https://yuqiiop.github.io/posts/unity_reverse_0/test/</link>
       <pubDate>Mon, 08 Dec 2025 21:47:28 +0800</pubDate>
-      <guid>https://yuqiiop.github.io/posts/test/</guid>
+      <guid>https://yuqiiop.github.io/posts/unity_reverse_0/test/</guid>
       <description>&lt;p&gt;一次unity逆向
 遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.&lt;/p&gt;
 &lt;p&gt;先用&lt;a href=&#34;https://github.com/Perfare/Il2CppDumper&#34;&gt;Il2CppDumper&lt;/a&gt; dumpdll,
