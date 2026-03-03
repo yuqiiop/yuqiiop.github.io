@@ -22,8 +22,8 @@
       <guid>https://yuqiiop.github.io/posts/unity_reverse_0/</guid>
       <description>&lt;p&gt;一次unity逆向
 遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.&lt;/p&gt;
-&lt;p&gt;先用&lt;a href=&#34;https://github.com/Perfare/Il2CppDumper&#34;&gt;Il2CppDumper&lt;/a&gt; dumpdll,
-Il2CppDumper.exe &amp;lt;executable-file&amp;gt;&amp;lt;global-metadata&amp;gt; &amp;lt;output-directory&amp;gt;
+&lt;p&gt;先用&lt;a href=&#34;https://github.com/Perfare/Il2CppDumper&#34;&gt;Il2CppDumper&lt;/a&gt;来 dump dll,&lt;/p&gt;
+&lt;p&gt;Il2CppDumper.exe &amp;lt;executable-file&amp;gt;&amp;lt;global-metadata&amp;gt; &amp;lt;output-directory&amp;gt;
 &lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/image.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;之后打开dump.cs文件搜索一下关键字 gold, diamond, exp之类的&lt;/p&gt;
 &lt;p&gt;找到一个看起来比较有用的类
