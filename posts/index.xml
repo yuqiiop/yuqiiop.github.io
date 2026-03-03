@@ -4,7 +4,7 @@
     <title>Posts on Yuiii&#39;s Blog</title>
     <link>https://yuqiiop.github.io/posts/</link>
     <description>Recent content in Posts on Yuiii&#39;s Blog</description>
-    <generator>Hugo -- 0.152.2</generator>
+    <generator>Hugo -- 0.156.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 08 Dec 2025 22:08:48 +0800</lastBuildDate>
     <atom:link href="https://yuqiiop.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -16,11 +16,44 @@
       <description></description>
     </item>
     <item>
-      <title>Test</title>
+      <title>unity逆向  Il2cpp </title>
       <link>https://yuqiiop.github.io/posts/test/</link>
       <pubDate>Mon, 08 Dec 2025 21:47:28 +0800</pubDate>
       <guid>https://yuqiiop.github.io/posts/test/</guid>
-      <description></description>
+      <description>&lt;p&gt;一次unity逆向
+遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.&lt;/p&gt;
+&lt;p&gt;先用&lt;a href=&#34;https://github.com/Perfare/Il2CppDumper&#34;&gt;Il2CppDumper&lt;/a&gt; dumpdll,
+Il2CppDumper.exe &amp;lt;executable-file&amp;gt;&amp;lt;global-metadata&amp;gt; &amp;lt;output-directory&amp;gt;
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之后打开dump.cs文件搜索一下关键字 gold, diamond, exp之类的&lt;/p&gt;
+&lt;p&gt;找到一个看起来比较有用的类
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;Snipaste_2026-03-03_20-41-05.png&#34;&gt;
+继续往下搜索get, set方法
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;Snipaste_2026-03-03_20-43-17.png&#34;&gt;
+因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;image-1.png&#34;&gt;
+直接打开会有很多函数分析不了的, 需要加载il2cppdumper中的ida脚本
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;Snipaste_2026-03-03_20-38-08.png&#34;&gt;
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;Snipaste_2026-03-03_20-38-31.png&#34;&gt;
+选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;image-2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;前面已经知道了get_ExpPool 的地址是0x10EADE80 在ida汇编界面中按快捷键g 弹出跳转框 直接跳转过去
+或者在搜索框中搜 |类名$$方法名| 也可以定位到
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;image-3.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;Snipaste_2026-03-03_20-19-40.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到一个明显的anticheat函数,
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;Snipaste_2026-03-03_20-20-07.png&#34;&gt;
+这边直接该eax返回值, 刚好五个字节,
+mov eax, 0ffffffh
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;Snipaste_2026-03-03_20-20-40.png&#34;&gt;
+同样的步骤修改get_gold函数,
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;Snipaste_2026-03-03_20-21-12.png&#34;&gt;
+保存替换掉原来的GameAssembly.dll文件
+启动游戏观察一下修改成功没有
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;image-4.png&#34;&gt;
+可以看到修改成功
+&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;image-5.png&#34;&gt;
+也可以正常使用&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello Hugo</title>
