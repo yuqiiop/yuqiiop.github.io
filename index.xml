@@ -32,7 +32,7 @@
 &lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/Snipaste_2026-03-03_20-43-17.png&#34;&gt;
 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/image-1.png&#34;&gt;
-直接打开会有很多函数分析不了的, 需要加载il2cppdumper中的ida脚本
+直接打开会有很多函数分析不出来, 需要加载il2cppdumper中的ida脚本
 &lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/Snipaste_2026-03-03_20-38-08.png&#34;&gt;
 &lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/Snipaste_2026-03-03_20-38-31.png&#34;&gt;
 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件
@@ -41,9 +41,9 @@
 或者在搜索框中搜 |类名$$方法名| 也可以定位到
 &lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/image-3.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/Snipaste_2026-03-03_20-19-40.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;可以看到一个明显的anticheat函数,
+&lt;p&gt;可以看到一个明显的AntiCheat函数,
 &lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/Snipaste_2026-03-03_20-20-07.png&#34;&gt;
-这边直接该eax返回值, 刚好五个字节,
+这边直接修改eax返回值, 刚好五个字节,
 mov eax, 0ffffffh
 &lt;img alt=&#34;alt text&#34; loading=&#34;lazy&#34; src=&#34;https://yuqiiop.github.io/posts/unity_reverse_0/Snipaste_2026-03-03_20-20-40.png&#34;&gt;
 同样的步骤修改get_gold函数,

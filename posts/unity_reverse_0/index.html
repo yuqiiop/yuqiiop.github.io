@@ -10,7 +10,7 @@ Il2CppDumper.exe <executable-file><global-metadata> <output-directory>
 
 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件
 
-直接打开会有很多函数分析不了的, 需要加载il2cppdumper中的ida脚本
+直接打开会有很多函数分析不出来, 需要加载il2cppdumper中的ida脚本
 
 
 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件
@@ -19,9 +19,9 @@ Il2CppDumper.exe <executable-file><global-metadata> <output-directory>
 或者在搜索框中搜 |类名$$方法名| 也可以定位到
 
 
-可以看到一个明显的anticheat函数,
+可以看到一个明显的AntiCheat函数,
 
-这边直接该eax返回值, 刚好五个字节,
+这边直接修改eax返回值, 刚好五个字节,
 mov eax, 0ffffffh
 
 同样的步骤修改get_gold函数,
@@ -35,7 +35,7 @@ mov eax, 0ffffffh
 先用Il2CppDumper来 dump dll,
 Il2CppDumper.exe <executable-file><global-metadata> <output-directory> 之后打开dump.cs文件搜索一下关键字 gold, diamond, exp之类的
 找到一个看起来比较有用的类 继续往下搜索get, set方法 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件
-直接打开会有很多函数分析不了的, 需要加载il2cppdumper中的ida脚本 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件 前面已经知道了get_ExpPool 的地址是0x10EADE80 在ida汇编界面中按快捷键g 弹出跳转框 直接跳转过去 或者在搜索框中搜 |类名$$方法名| 也可以定位到 可以看到一个明显的anticheat函数, 这边直接该eax返回值, 刚好五个字节, mov eax, 0ffffffh 同样的步骤修改get_gold函数, 保存替换掉原来的GameAssembly.dll文件 启动游戏观察一下修改成功没有 可以看到修改成功 也可以正常使用"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-12-08T21:47:28+08:00"><meta property="article:modified_time" content="2025-12-08T21:47:28+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="unity逆向  Il2cpp "><meta name=twitter:description content="一次unity逆向
+直接打开会有很多函数分析不出来, 需要加载il2cppdumper中的ida脚本 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件 前面已经知道了get_ExpPool 的地址是0x10EADE80 在ida汇编界面中按快捷键g 弹出跳转框 直接跳转过去 或者在搜索框中搜 |类名$$方法名| 也可以定位到 可以看到一个明显的AntiCheat函数, 这边直接修改eax返回值, 刚好五个字节, mov eax, 0ffffffh 同样的步骤修改get_gold函数, 保存替换掉原来的GameAssembly.dll文件 启动游戏观察一下修改成功没有 可以看到修改成功 也可以正常使用"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-12-08T21:47:28+08:00"><meta property="article:modified_time" content="2025-12-08T21:47:28+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="unity逆向  Il2cpp "><meta name=twitter:description content="一次unity逆向
 遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.
 先用Il2CppDumper来 dump dll,
 Il2CppDumper.exe <executable-file><global-metadata> <output-directory>
@@ -47,7 +47,7 @@ Il2CppDumper.exe <executable-file><global-metadata> <output-directory>
 
 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件
 
-直接打开会有很多函数分析不了的, 需要加载il2cppdumper中的ida脚本
+直接打开会有很多函数分析不出来, 需要加载il2cppdumper中的ida脚本
 
 
 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件
@@ -56,9 +56,9 @@ Il2CppDumper.exe <executable-file><global-metadata> <output-directory>
 或者在搜索框中搜 |类名$$方法名| 也可以定位到
 
 
-可以看到一个明显的anticheat函数,
+可以看到一个明显的AntiCheat函数,
 
-这边直接该eax返回值, 刚好五个字节,
+这边直接修改eax返回值, 刚好五个字节,
 mov eax, 0ffffffh
 
 同样的步骤修改get_gold函数,
@@ -68,7 +68,7 @@ mov eax, 0ffffffh
 
 可以看到修改成功
 
-也可以正常使用"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://yuqiiop.github.io/posts/"},{"@type":"ListItem","position":2,"name":"unity逆向  Il2cpp ","item":"https://yuqiiop.github.io/posts/unity_reverse_0/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"unity逆向  Il2cpp ","name":"unity逆向  Il2cpp ","description":"一次unity逆向 遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.\n先用Il2CppDumper来 dump dll,\nIl2CppDumper.exe \u0026lt;executable-file\u0026gt;\u0026lt;global-metadata\u0026gt; \u0026lt;output-directory\u0026gt; 之后打开dump.cs文件搜索一下关键字 gold, diamond, exp之类的\n找到一个看起来比较有用的类 继续往下搜索get, set方法 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件\n直接打开会有很多函数分析不了的, 需要加载il2cppdumper中的ida脚本 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件 前面已经知道了get_ExpPool 的地址是0x10EADE80 在ida汇编界面中按快捷键g 弹出跳转框 直接跳转过去 或者在搜索框中搜 |类名$$方法名| 也可以定位到 可以看到一个明显的anticheat函数, 这边直接该eax返回值, 刚好五个字节, mov eax, 0ffffffh 同样的步骤修改get_gold函数, 保存替换掉原来的GameAssembly.dll文件 启动游戏观察一下修改成功没有 可以看到修改成功 也可以正常使用\n","keywords":[],"articleBody":"一次unity逆向 遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.\n先用Il2CppDumper来 dump dll,\nIl2CppDumper.exe 之后打开dump.cs文件搜索一下关键字 gold, diamond, exp之类的\n找到一个看起来比较有用的类 继续往下搜索get, set方法 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件\n直接打开会有很多函数分析不了的, 需要加载il2cppdumper中的ida脚本 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件 前面已经知道了get_ExpPool 的地址是0x10EADE80 在ida汇编界面中按快捷键g 弹出跳转框 直接跳转过去 或者在搜索框中搜 |类名$$方法名| 也可以定位到 可以看到一个明显的anticheat函数, 这边直接该eax返回值, 刚好五个字节, mov eax, 0ffffffh 同样的步骤修改get_gold函数, 保存替换掉原来的GameAssembly.dll文件 启动游戏观察一下修改成功没有 可以看到修改成功 也可以正常使用\n","wordCount":"48","inLanguage":"en","datePublished":"2025-12-08T21:47:28+08:00","dateModified":"2025-12-08T21:47:28+08:00","author":{"@type":"Person","name":"Yuiii"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://yuqiiop.github.io/posts/unity_reverse_0/"},"publisher":{"@type":"Organization","name":"Yuiii's Blog","logo":{"@type":"ImageObject","url":"https://yuqiiop.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://yuqiiop.github.io/ accesskey=h title="Yuiii's Blog (Alt + H)">Yuiii's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+也可以正常使用"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://yuqiiop.github.io/posts/"},{"@type":"ListItem","position":2,"name":"unity逆向  Il2cpp ","item":"https://yuqiiop.github.io/posts/unity_reverse_0/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"unity逆向  Il2cpp ","name":"unity逆向  Il2cpp ","description":"一次unity逆向 遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.\n先用Il2CppDumper来 dump dll,\nIl2CppDumper.exe \u0026lt;executable-file\u0026gt;\u0026lt;global-metadata\u0026gt; \u0026lt;output-directory\u0026gt; 之后打开dump.cs文件搜索一下关键字 gold, diamond, exp之类的\n找到一个看起来比较有用的类 继续往下搜索get, set方法 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件\n直接打开会有很多函数分析不出来, 需要加载il2cppdumper中的ida脚本 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件 前面已经知道了get_ExpPool 的地址是0x10EADE80 在ida汇编界面中按快捷键g 弹出跳转框 直接跳转过去 或者在搜索框中搜 |类名$$方法名| 也可以定位到 可以看到一个明显的AntiCheat函数, 这边直接修改eax返回值, 刚好五个字节, mov eax, 0ffffffh 同样的步骤修改get_gold函数, 保存替换掉原来的GameAssembly.dll文件 启动游戏观察一下修改成功没有 可以看到修改成功 也可以正常使用\n","keywords":[],"articleBody":"一次unity逆向 遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.\n先用Il2CppDumper来 dump dll,\nIl2CppDumper.exe 之后打开dump.cs文件搜索一下关键字 gold, diamond, exp之类的\n找到一个看起来比较有用的类 继续往下搜索get, set方法 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件\n直接打开会有很多函数分析不出来, 需要加载il2cppdumper中的ida脚本 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件 前面已经知道了get_ExpPool 的地址是0x10EADE80 在ida汇编界面中按快捷键g 弹出跳转框 直接跳转过去 或者在搜索框中搜 |类名$$方法名| 也可以定位到 可以看到一个明显的AntiCheat函数, 这边直接修改eax返回值, 刚好五个字节, mov eax, 0ffffffh 同样的步骤修改get_gold函数, 保存替换掉原来的GameAssembly.dll文件 启动游戏观察一下修改成功没有 可以看到修改成功 也可以正常使用\n","wordCount":"48","inLanguage":"en","datePublished":"2025-12-08T21:47:28+08:00","dateModified":"2025-12-08T21:47:28+08:00","author":{"@type":"Person","name":"Yuiii"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://yuqiiop.github.io/posts/unity_reverse_0/"},"publisher":{"@type":"Organization","name":"Yuiii's Blog","logo":{"@type":"ImageObject","url":"https://yuqiiop.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://yuqiiop.github.io/ accesskey=h title="Yuiii's Blog (Alt + H)">Yuiii's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
 <svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://yuqiiop.github.io/posts/ title="📚 posts"><span>📚 posts</span></a></li><li><a href=https://yuqiiop.github.io/tags/ title="🔖 tags"><span>🔖 tags</span></a></li><li><a href=https://yuqiiop.github.io/archives/ title="🗂 archives"><span>🗂 archives</span></a></li><li><a href=https://yuqiiop.github.io/search/ title="🔍 search (Alt + /)" accesskey=/><span>🔍 search</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://yuqiiop.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://yuqiiop.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">unity逆向 Il2cpp</h1><div class=post-meta><span title='2025-12-08 21:47:28 +0800 CST'>2025-12-08</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>48 words</span>&nbsp;·&nbsp;<span>Yuiii</span></div></header><div class=post-content><p>一次unity逆向
 遇到一个有反调试的单机游戏, YGGDRA REFRAIN, 用ce修改数据直接游戏终止了, 所以试试直接反编译改源码.</p><p>先用<a href=https://github.com/Perfare/Il2CppDumper>Il2CppDumper</a>来 dump dll,</p><p>Il2CppDumper.exe &lt;executable-file>&lt;global-metadata> &lt;output-directory>
@@ -77,15 +77,15 @@ mov eax, 0ffffffh
 继续往下搜索get, set方法
 <img alt="alt text" loading=lazy src=/posts/unity_reverse_0/Snipaste_2026-03-03_20-43-17.png>
 因为金币和经验老是不够用, 这边先修改金币和经验, dump.cs文件里面直接标出了va, 用ida打开游戏目录下的GameAssembly.dll文件</p><p><img alt="alt text" loading=lazy src=/posts/unity_reverse_0/image-1.png>
-直接打开会有很多函数分析不了的, 需要加载il2cppdumper中的ida脚本
+直接打开会有很多函数分析不出来, 需要加载il2cppdumper中的ida脚本
 <img alt="alt text" loading=lazy src=/posts/unity_reverse_0/Snipaste_2026-03-03_20-38-08.png>
 <img alt="alt text" loading=lazy src=/posts/unity_reverse_0/Snipaste_2026-03-03_20-38-31.png>
 选择对应的脚本 ida_py3.py和ida_with_struct_py3.py的区别是后者会加载一些结构 但是会慢很多. 然后按照提示选择前面生成的文件
 <img alt="alt text" loading=lazy src=/posts/unity_reverse_0/image-2.png></p><p>前面已经知道了get_ExpPool 的地址是0x10EADE80 在ida汇编界面中按快捷键g 弹出跳转框 直接跳转过去
 或者在搜索框中搜 |类名$$方法名| 也可以定位到
-<img alt="alt text" loading=lazy src=/posts/unity_reverse_0/image-3.png></p><p><img alt="alt text" loading=lazy src=/posts/unity_reverse_0/Snipaste_2026-03-03_20-19-40.png></p><p>可以看到一个明显的anticheat函数,
+<img alt="alt text" loading=lazy src=/posts/unity_reverse_0/image-3.png></p><p><img alt="alt text" loading=lazy src=/posts/unity_reverse_0/Snipaste_2026-03-03_20-19-40.png></p><p>可以看到一个明显的AntiCheat函数,
 <img alt="alt text" loading=lazy src=/posts/unity_reverse_0/Snipaste_2026-03-03_20-20-07.png>
-这边直接该eax返回值, 刚好五个字节,
+这边直接修改eax返回值, 刚好五个字节,
 mov eax, 0ffffffh
 <img alt="alt text" loading=lazy src=/posts/unity_reverse_0/Snipaste_2026-03-03_20-20-40.png>
 同样的步骤修改get_gold函数,
